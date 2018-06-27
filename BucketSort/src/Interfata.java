@@ -19,15 +19,14 @@ import java.util.Arrays;
 public class Interfata extends Application {
     private File file;
     private BucketSort bucketSort;
-    private Text t, t1;
     private TextArea textArea;
     private double[] doubles1;
     private boolean neg;
+    private static int t;
     @Override
     public void start(Stage primaryStage) {
         Button b = new Button("Alegeti vectorul de sortat");
-        t = new Text();
-        t1 = new Text();
+        t=1;
         textArea=new TextArea();
         textArea.setMinSize(400,300);
         textArea.setMaxSize(400,300);
@@ -59,7 +58,8 @@ public class Interfata extends Application {
                 System.out.println(Arrays.toString(doubles1));
                 if (doubles1 != null) {
                     bucketSort = new BucketSort(doubles1,neg);
-                    textArea.appendText("Inainte de sortare: " + Arrays.toString(getVectorFile())+"\r\nDupa sortare: " + bucketSort.getVector()+"\r\n\r\n");
+                    textArea.appendText(t+".  Inainte de sortare: " + Arrays.toString(getVectorFile())+"\r\nDupa sortare: " + bucketSort.getVector()+"\r\n\r\n");
+                    t++;
                 }
             }
         };
