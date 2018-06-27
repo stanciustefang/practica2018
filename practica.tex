@@ -1,0 +1,254 @@
+\documentclass{report}
+\usepackage{ucs}
+\usepackage[utf8x]{inputenc}
+\usepackage[english,romanian]{babel}
+\usepackage{abstract}
+\usepackage{tikz}
+\usepackage{fancyhdr}
+
+
+\newcommand*\rect[1]{
+    \tikz[baseline=(char.base)]{
+        \node[inner sep=8pt, minimum size=1cm] (char) {#1};
+        \draw (char.north west) -- (char.south west) -| (char.north east);
+        }
+}
+\renewcommand{\abstractnamefont}{\normalfont\LARGE\bfseries}
+\renewcommand{\abstracttextfont}{\normalfont\huge}
+\title{ Implementarea algoritmului de sortare prin metoda buchetelor (bucket sort) }
+\author{\Large{Stefan Stanciu}}
+\date{\Huge{\textbf{June 2018}}}
+\fancypagestyle{plain}{
+\fancyhead{}
+\fancyhead[LE,LO]{Ministerul Educației Naționale și Cercetării Științifice Universitatea OVIDIUS Constanța Facultatea de Matematică şi Informatică Specializarea Informatică}}
+\begin{document}
+\addtocontents{toc}{\protect\thispagestyle{fancy}}
+\chead{Ministerul Educației Naționale și Cercetării Științifice Universitatea OVIDIUS Constanța Facultatea de Matematică şi Informatică Specializarea Informatică}
+    \maketitle
+
+\begin{abstract}
+Proiectul ales de mine este algoritmul de sortare metoda buchetelor sau bucket sort.Această metodă este numită şi “sortare în recipiente (găleţi)”.Ea face parte din algoritmi de sortare fară comparații.Lucrarea este de tip cercetare.
+\end{abstract}
+
+\tableofcontents
+
+
+
+\chapter{Introducere}
+
+    \LARGE{Scurtă descriere a algorimului:}
+    \begin{itemize}
+        \item \LARGE{preia un vector dintr-un fisier}
+        \item \LARGE{creeaza un număr de găleți egal cu câtul împărțiri valori maxime a vectorului la zece adunat cu 1 }
+        \item \LARGE{elementele se inserează în galeata cu numărul egal cu câtul împărțiri valori absolute a elementului la zece}
+        \item \LARGE{elementele din fiecare găleata sunt sortate cu algoritmul de sortare prin insertie}
+        \item \LARGE{gălețile sunt concatenate}
+    \end{itemize}
+
+\vskip 5cm
+\Huge{Exemple:}
+\begin{enumerate}
+    \item {
+     \rect{10} \rect{1.1} \rect{1} \rect{5} \rect{0} \rect{3.2} \\
+     \rect{1.1 , 1 , 5 , 0 , 3.2} \rect{10}\\
+     \rect{0 , 1 , 1.1 , 3.2 , 5} \rect{10}\\
+     \rect{0 , 1 , 1.1 , 3.2 , 5 , 10}
+    }
+    \vskip 0.5cm
+    \item {
+     \rect{14} \rect{11} \rect{1} \rect{5} \rect{0} \rect{3.2} \rect{21} \rect{20} \\
+     \rect{1 , 5 , 0 , 3.2} \rect{14 , 11} \rect{21 , 20 }\\
+     \rect{0 , 1 , 3.2 , 5} \rect{11 , 14} \rect{20 , 21}\\
+     \rect{0 , 1 , 3.2 , 5 , 11 , 14 , 20 , 21}
+    } 
+\end{enumerate}
+
+\vskip 0.5cm
+
+\huge{Pseudocod:\\ \\
+n←lungime(x);\\
+m←valoarea maxima din x
+nrbucket←
+pentru i ←1, n execută\\
+inserează x[i] în lista GAL [parte întreagă(x[i])/10]
+ pentru i ←0, n - 1 executa
+         sortează lista GAL[i] folosind sortarea prin inserţie
+concatenează în ordine listele GAL [0] , GAL[1] , …,GAL[n - 1]
+}
+\chapter{Activități planificate}
+
+\begin{enumerate}
+
+\item  Luni, 26.06.2017 \newline
+
+Aducerea la cunoștință a obiectivelor și cerințelor practicii de producție
+
+\item  Marți, 27.06.2017 \newline
+
+Configurarea sistemelor software pe calculatoare. 
+
+\item  Miercuri, 28.06.2017 \newline
+
+Studierea modului de lucru cu Git. Interfețe grafice de lucru cu Git (SmartGit).
+
+\item  Joi, 29.06.2016 \newline
+
+Studierea și practicarea LaTeX
+
+\item  Vineri, 30.06.2017  \newline
+
+Inițierea unei lucrări (descrierea unui algoritm, a unei teme agreate cu prof. coordonator)
+
+\item  Luni, 03.07.2017  \newline
+
+Lucrul asupra lucrării
+
+\item  Marți, 04.07.2017  \newline
+
+Lucrul asupra lucrării
+
+\item  Miercuri, 05.07.2017  \newline
+
+Prezentarea lucrărllor
+
+\item  Joi, 06.07.2017  \newline
+
+Prezentarea lucrărilor
+
+\item  Vineri, 07.07.2017  \newline
+
+Notarea finală a activității
+
+\end{enumerate}
+
+\chapter{26.06.2017}
+
+Am desfăţurat următoarele activităţi:
+
+\begin{itemize}
+
+\item
+
+Am identificat sursele pentru MikTeX, Git, SmartGit și BitBucket.
+
+\begin{itemize}
+
+\item
+
+Am identificat sursele pentru MikTeX, Git, SmartGit și BitBucket.
+
+\item
+
+Am instalat, configurat pe calculatorul de lucru aplicațiile necesare:
+
+\begin{itemize}
+
+\item
+
+MikTeX
+
+\item
+
+SmartGit
+
+\item
+
+Bitbucket
+
+\end{itemize}
+
+\item
+
+Am instalat, configurat pe calculatorul de lucru aplicațiile necesare:
+
+\begin{itemize}
+
+\item
+
+MikTeX
+
+\item
+
+SmartGit
+
+\item
+
+Bitbucket
+
+\end{itemize}
+
+
+
+\end{itemize}
+
+\end{itemize}
+
+
+
+\chapter{26.06.2017}
+
+Studierea obiectivelor și cerințelor față de practica de producție. Clarificarea situațiilor incerte.
+
+\chapter{27.06.2017}
+
+Am studiat modul de lucru cu Git și interfața grafică de lucru cu Git (SmartGit).
+
+\chapter{28.06.2017}
+
+Am studiat și am practicat Latex.
+
+\chapter{29.06.2017}
+
+Am inițiat o lucrare scrisă în Latex.
+
+\chapter{30.06.2017}
+
+Am continuat lucrul asupra temei alese.
+
+\chapter{03.07.2017}
+
+Am continuat lucrul asupra temei și am terminat .
+
+\chapter{04.07.2017}
+
+Am continuat lucrul asupra temei și am terminat .
+
+Prezentarea proiectului.
+
+\chapter{05.07.2017}
+
+Prezentarea proiectului.
+
+\chapter{06.07.2017}
+
+Prezentarea proiectului.
+
+\chapter{07.07.2017}
+
+
+
+Notarea finală a activității.
+
+
+
+\chapter{Concluzii}
+
+\Large{Am invățat să lucrez cu Latex ,Git și BitBucket. Aici pot fi prezentate succint lucrurile învățate (câte ceva despre git, latex, bitbucket, etc - se pot adăuga secțiuni pentru fiecare subiect). 
+
+
+
+Și acum să cităm unele dintre referințele noastre \cite{DUMMY:1} și \cite{book:25008}. La fel putem să cităm și alte cărți și surse online cum ar fi \cite{book:776133, book:1045183}. Alte exemple sunt în mostra / modelul unei lucrări de licență de pe site-ul facultății. }
+
+
+
+% aici urmeaza declaratiile care fac posibila includerea bibliografiei in format bibtex. 
+
+
+
+\bibliography{referinte} 
+
+\bibliographystyle{ieeetr}
+
+
+
+\end{document}
