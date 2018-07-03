@@ -1,0 +1,43 @@
+\chapter{Introducere}
+\section{Descriere}
+    \LARGE{Scurtă descriere a algorimului implemantat de mine:}
+    \begin{itemize}
+        \item \LARGE{preia un vector dintr-un fisier}
+        \item \LARGE{creeaza un număr de găleți egal cu câtul împărțiri valori maxime a vectorului la zece adunat cu 1 }
+        \item \LARGE{elementele se inserează în galeata cu numărul egal cu câtul împărțiri valori absolute a elementului la zece}
+        \item \LARGE{elementele din fiecare găleata sunt sortate cu algoritmul de sortare prin insertie}
+        \item \LARGE{gălețile sunt concatenate}
+    \end{itemize}
+
+
+\subsection{Exemple}
+\begin{enumerate}
+    \item {
+     \rect{10} \rect{1.1} \rect{1} \rect{5} \rect{0} \rect{3.2} \\
+     \rect{1.1 , 1 , 5 , 0 , 3.2} \rect{10}\\
+     \rect{0 , 1 , 1.1 , 3.2 , 5} \rect{10}\\
+     \rect{0 , 1 , 1.1 , 3.2 , 5 , 10}
+    }
+    \vskip 0.5cm
+    \item {
+     \rect{14} \rect{11} \rect{1} \rect{5} \rect{0} \rect{3.2} \rect{21} \rect{20} \\
+     \rect{1 , 5 , 0 , 3.2} \rect{14 , 11} \rect{21 , 20 }\\
+     \rect{0 , 1 , 3.2 , 5} \rect{11 , 14} \rect{20 , 21}\\
+     \rect{0 , 1 , 3.2 , 5 , 11 , 14 , 20 , 21}
+    } 
+\end{enumerate}
+
+\vskip 0.5cm
+
+\section{Pseudocod}
+\begin{lstlisting}
+n:=lungime(x);
+for i:=1 to n do
+insereaza x[i] in lista 
+GAL [parte intreaga(n*x[i])]
+for i:=0 to n - 1 do
+ sorteaza lista GAL[i] folosind
+ sortarea prin insertie
+concateneaza in ordine listele 
+GAL [0] , GAL[1], ... ,GAL[n - 1]
+\end{lstlisting}
