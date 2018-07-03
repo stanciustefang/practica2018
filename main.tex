@@ -5,6 +5,7 @@
 \usepackage{graphicx}
 \usepackage{hyperref}
 \usepackage{color,xcolor}
+\usepackage{ucs}
 \usepackage[utf8x]{inputenc}
 \usepackage[english,romanian]{babel}
 \usepackage{framed}
@@ -14,6 +15,7 @@
 \usepackage{multicol,multirow}
 \usepackage{abstract}
 \usepackage{tikz}
+
 \graphicspath{ {./image/} }
 \lstset{breaklines=true,
 language=Java,
@@ -73,8 +75,13 @@ basicstyle=\fontsize{11}{13}\selectfont\ttfamily}
 \begin{abstract}
 Proiectul ales de mine este algoritmul de sortare metoda buchetelor sau bucket sort.Această metodă este numită şi “sortare în recipiente (găleţi)”.Ea face parte din algoritmi de sortare bazați pe comparații.\\Lucrarea pe care eu o redactez este de tip cercetare.
 \end{abstract}
+\nocite{Tutorial}
+\nocite{Bucket}
 \tableofcontents
 \pagenumbering{arabic}
 \include{Introducere}
 \include{Aplicatie}
+\include{concluzii}
+\bibliography{referinte} 
+\bibliographystyle{ieeetr}
 \end{document}
